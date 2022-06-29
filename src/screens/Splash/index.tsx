@@ -1,21 +1,26 @@
 import React from 'react';
-import { Animated, SafeAreaView } from 'react-native';
 
-import { Logo } from '../../assets';
+import { Center, Text, View } from 'native-base';
+
 import { useSplash } from './hook';
 
-import { styles } from './styles';
-
-export default function Splash(): JSX.Element {
-  const { rotateData } = useSplash();
-
+export default function Splash() {
+  useSplash();
   return (
-    <SafeAreaView style={styles.imageRotate}>
-      <Animated.Image
-        testID={'splash-screen'}
-        source={Logo}
-        style={{ width: 300, height: 300, transform: [{ rotate: rotateData }] }}
-      />
-    </SafeAreaView>
+    <Center flex={1}>
+      <View
+        bgColor={'muted.300'}
+        borderRadius={6}
+        height={217}
+        width={203}
+        alignItems={'center'}
+        justifyContent={'center'}
+      >
+        <Text>Logo</Text>
+      </View>
+      <Text fontSize={14} position={'absolute'} bottom={10}>
+        Version 0.00.00
+      </Text>
+    </Center>
   );
 }
