@@ -15,6 +15,7 @@ declare global {
   namespace ReactNavigation {
     type RootStackParamList = {
       SplashScreen: undefined | never;
+      SelectLanguageScreen: undefined | never;
       IntroScreen: undefined | never;
     };
 
