@@ -1,0 +1,59 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  # desc "Description of what the lane does"
+  # # lane :custom_lane do
+  # #   # add actions here: https://docs.fastlane.tools/actions
+  # # end
+  # # desc "Building your App in beta version"
+
+  desc "Initiate beta release iOS"
+  lane :beta do |options|
+      build(profile: options[:env])
+      firebase_app_distribution(
+        app: ENV['APP_ID'],
+        groups: ENV["GROUPS"] || options[:groups],
+        release_notes: options[:notes] || "",
+      )
+  end
+
+  desc "Build iOS app"
+  private_lane :build do |options|
+    puts "+------------------------------------+".bold.blue
+    puts "|-- Environment: #{options[:profile]} 🚀 --|".bold.blue
+    puts "+------------------------------------+".bold.blue
+
+    increment_build_number()
+
+    scheme = ENV['SCHEME_NAME']
+    method = (options[:profile] == 'distribution' ? "app-store" : "ad-hoc")
+    profile = (options[:profile] == 'distribution' ? 
+      ENV['DISTRIBUTION_PROFILE_APPSTORE'] : ENV['DISTRIBUTION_PROFILE_FIREBASE'])
+    build_app(
+      scheme: scheme,
+      export_options: {
+        method: method,
+        provisioningProfiles: {
+          ENV['BUNDLE_ID'] => profile
+        }
+      },
+      include_bitcode: true,
+      clean: true
+    )
+end
+end

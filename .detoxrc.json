@@ -1,0 +1,137 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "skipLegacyWorkersInjection": true,
+  "apps": {
+    "ios.dev.debug": {
+      "name": "Finetiks",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/Finetiks.app",
+      "build": "xcodebuild -workspace ios/Finetiks.xcworkspace -configuration Debug -scheme Finetiks -sdk iphonesimulator -derivedDataPath ios/build"
+    },
+    "ios.dev.release": {
+      "name": "Finetiks",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Releases-iphonesimulator/Finetiks.app",
+      "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/Finetiks.xcworkspace -UseNewBuildSystem=YES -scheme Finetiks -configuration Release -sdk iphonesimulator -derivedDataPath ios/build"
+    },
+    "ios.staging.debug": {
+      "name": "Finetiks",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/Finetiks.app",
+      "build": "xcodebuild -workspace ios/Finetiks.xcworkspace -configuration Debug -scheme \"Finetiks Staging\" -sdk iphonesimulator -derivedDataPath ios/build"
+    },
+    "ios.staging.release": {
+      "name": "Finetiks",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Releases-iphonesimulator/Finetiks.app",
+      "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/Finetiks.xcworkspace -UseNewBuildSystem=YES -scheme \"Finetiks Staging\" -configuration Release -sdk iphonesimulator -derivedDataPath ios/build"
+    },
+    "ios.prod.debug": {
+      "name": "Finetiks",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/Finetiks.app",
+      "build": "xcodebuild -workspace ios/Finetiks.xcworkspace -configuration Debug -scheme \"Finetiks Prod\" -sdk iphonesimulator -derivedDataPath ios/build"
+    },
+    "ios.prod.release": {
+      "name": "Finetiks",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Releases-iphonesimulator/Finetiks.app",
+      "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/Finetiks.xcworkspace -UseNewBuildSystem=YES -scheme \"Finetiks Prod\" -configuration Release -sdk iphonesimulator -derivedDataPath ios/build"
+    },
+    "android.dev.debug": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/dev/debug/app-dev-debug.apk",
+      "build": "cd android ; ./gradlew assembleDevDebug assembleAndroidTest -DtestBuildType=debug ; cd .."
+    },
+    "android.dev.release": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/dev/debug/app-dev-debug.apk",
+      "build": "cd android ; ./gradlew assembleDevRelease assembleAndroidTest -DtestBuildType=release ; cd .."
+    },
+    "android.staging.debug": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/staging/debug/app-staging-debug.apk",
+      "build": "cd android ; ./gradlew assembleStagingDebug assembleAndroidTest -DtestBuildType=debug ; cd .."
+    },
+    "android.staging.release": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/staging/debug/app-staging-debug.apk",
+      "build": "cd android ; ./gradlew assembleStagingRelease assembleAndroidTest -DtestBuildType=release ; cd .."
+    },
+    "android.prod.debug": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/prod/debug/app-prod-debug.apk",
+      "build": "cd android ; ./gradlew assembleProdDebug assembleAndroidTest -DtestBuildType=debug ; cd .."
+    },
+    "android.prod.release": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/prod/release/app-prod-release.apk",
+      "build": "cd android ; ./gradlew assembleProdRelease assembleAndroidTest -DtestBuildType=release ; cd .."
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 13"
+      }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Pixel_API_30_AOSP"
+      }
+    }
+  },
+  "configurations": {
+    "ios.sim.dev.debug": {
+      "device": "simulator",
+      "app": "ios.dev.debug"
+    },
+    "ios.sim.dev.release": {
+      "device": "simulator",
+      "app": "ios.dev.release"
+    },
+    "ios.sim.staging.debug": {
+      "device": "simulator",
+      "app": "ios.staging.debug"
+    },
+    "ios.sim.staging.release": {
+      "device": "simulator",
+      "app": "ios.staging.release"
+    },
+    "ios.sim.prod.debug": {
+      "device": "simulator",
+      "app": "ios.prod.debug"
+    },
+    "ios.sim.prod.release": {
+      "device": "simulator",
+      "app": "ios.prod.release"
+    },
+    "android.sim.dev.debug": {
+      "device": "emulator",
+      "app": "android.dev.debug"
+    },
+    "android.sim.dev.release": {
+      "device": "emulator",
+      "app": "android.dev.release"
+    },
+    "android.sim.staging.debug": {
+      "device": "emulator",
+      "app": "android.staging.debug"
+    },
+    "android.sim.staging.release": {
+      "device": "emulator",
+      "app": "android.staging.release"
+    },
+    "android.sim.prod.debug": {
+      "device": "emulator",
+      "app": "android.prod.debug"
+    },
+    "android.sim.prod.release": {
+      "device": "emulator",
+      "app": "android.prod.release"
+    }
+  }
+}
