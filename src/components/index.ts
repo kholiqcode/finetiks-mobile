@@ -1,4 +1,4 @@
 export * from './atoms';
-export * from './layouts';
+export * from './layout';
 export * from './molecules';
 export * from './organisms';
