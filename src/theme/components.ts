@@ -1,48 +1,43 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { ComponentTheme } from 'native-base';
+
 const sizes = {
-  lg: {
-    px: 6,
-    py: 3,
-    _text: {
-      fontSize: 'lg',
-    },
-  },
-  md: {
-    px: 5,
-    py: 3,
-    _text: {
-      fontSize: 'md',
-    },
-  },
   sm: {
-    px: 4,
-    py: 3,
-    _text: {
-      fontSize: 'sm',
-    },
-  },
-  xs: {
-    px: 2,
-    py: 1,
+    px: 3,
+    py: '10px',
     _text: {
       fontSize: 'xs',
     },
   },
 };
 
-const Button = {
+const Button: ComponentTheme = {
+  baseStyle: {},
   defaultProps: {
     rounded: 'xl',
     fontFamily: 'mono',
     fontWeight: 700,
     variant: 'solid',
     size: 'sm',
-    fontSize: 'xl',
   },
   sizes,
+  variants: {
+    outlineGray: (props) => {
+      return {
+        borderWidth: '2',
+        borderColor: 'muted.800',
+        backgroundColor: 'muted.50',
+        _text: {
+          color: 'text.500',
+          fontWeight: props.fontWeight,
+          fontFamily: props.fontFamily,
+        },
+        ...props,
+      };
+    },
+  },
 };
 
-const Progress = {
+const Progress: ComponentTheme = {
   defaultProps: {
     variant: 'default',
     colorScheme: 'warning',
@@ -55,9 +50,7 @@ const Select = {
     fontFamily: 'mono',
     fontWeight: 400,
     fontSize: 'sm',
-    color: 'manta.100',
     variant: 'outline',
-    borderColor: 'manta.100',
     borderRadius: 8,
   },
   variants: {},
@@ -68,7 +61,8 @@ const Input = {
   defaultProps: {
     fontFamily: 'mono',
     fontSize: 'sm',
-    color: 'manta.100',
+    color: 'muted.300',
+    fontColor: 'muted.300',
     fontWeight: 500,
   },
   variants: {},
