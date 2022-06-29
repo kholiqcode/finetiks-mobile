@@ -1,4 +1,4 @@
-import { Intro, SelectLanguage, Splash } from '@screens';
+import { Intro, Register, SelectLanguage, Splash } from '@screens';
 
 const ShareScreens = [
   {
@@ -22,6 +22,14 @@ const ShareScreens = [
     component: SelectLanguage,
     options: {
       title: 'select_language',
+      gestureEnabled: false,
+    },
+  },
+  {
+    name: 'RegisterScreen',
+    component: Register,
+    options: {
+      title: 'register',
       gestureEnabled: false,
     },
   },
