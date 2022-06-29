@@ -5,23 +5,22 @@ import { fireEvent, render } from '@mocks';
 import { FAButton } from '@components/atoms';
 
 describe('FAButton', () => {
-  it('should match snapshot', () => {
-    const { toJSON } = render(<FAButton testID="button-example">Test</FAButton>);
+  it('should render correctly', () => {
+    const container = render(<FAButton>Test</FAButton>);
 
-    expect(toJSON()).toMatchSnapshot();
+    expect(container).toBeDefined();
   });
 
   it('should render with children prop', () => {
-    const { getByText } = render(<FAButton testID="button-example">Test</FAButton>);
+    const { getByText } = render(<FAButton>Test</FAButton>);
 
-    expect(getByText('Test')).toBeTruthy();
+    expect(getByText('Test')).toBeDefined();
   });
 
   it('should increment number on click', () => {
     let number = 1;
-    const { getByTestId } = render(
+    const { getByText } = render(
       <FAButton
-        testID="button-example"
         onPress={() => {
           number += 1;
         }}
@@ -30,7 +29,7 @@ describe('FAButton', () => {
       </FAButton>,
     );
 
-    fireEvent.press(getByTestId('button-example'));
+    fireEvent.press(getByText('FAButton'));
 
     expect(number).toBe(2);
   });

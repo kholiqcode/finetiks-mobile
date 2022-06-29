@@ -5,17 +5,23 @@ import { render } from '@mocks';
 import { FAIcon } from '@components/atoms';
 
 describe('FAIcon', () => {
-  it('should match snapshot', () => {
-    const { toJSON } = render(<FAIcon />);
+  it('should render correctly with default type', () => {
+    const container = render(<FAIcon />);
 
-    expect(toJSON()).toMatchSnapshot();
+    expect(container).toBeDefined();
   });
 
-  it('should render with children prop', () => {
-    const container = render(
-      <FAIcon testID="icon-example" name="home" size={30} color={'primary.500'} />,
-    );
+  it('should render with Ionicons type', () => {
+    const icon = 'ionicons';
+    const container = render(<FAIcon type={icon} />);
 
-    expect(container).toBeTruthy();
+    expect(container).toBeDefined();
+  });
+
+  it('should render with Feather type', () => {
+    const icon = 'feather';
+    const container = render(<FAIcon type={icon} />);
+
+    expect(container).toBeDefined();
   });
 });

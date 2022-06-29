@@ -5,25 +5,22 @@ import { fireEvent, render } from '@mocks';
 import { FATextArea } from '@components/atoms';
 
 describe('FATextArea', () => {
-  it('should match snapshot', () => {
-    const { toJSON } = render(<FATextArea />);
+  it('should render correctly', () => {
+    const container = render(<FATextArea />);
 
-    expect(toJSON()).toMatchSnapshot();
-  });
-
-  it('should render with children prop', () => {
-    const container = render(<FATextArea numberOfLines={4} placeholder="Test Input" />);
-
-    expect(container).toBeTruthy();
+    expect(container).toBeDefined();
   });
 
   it('should can change text textArea', () => {
-    const { getByTestId } = render(
-      <FATextArea testID="test-textArea" numberOfLines={4} placeholder="Test TextArea" />,
+    const mock = jest.fn();
+
+    const { getByPlaceholderText } = render(
+      <FATextArea numberOfLines={4} placeholder="TextArea" onChangeText={mock} />,
     );
 
-    const textAreaEmail = getByTestId('test-textArea');
-    expect(textAreaEmail).toBeTruthy();
+    const textAreaEmail = getByPlaceholderText('TextArea');
+    expect(textAreaEmail).toBeDefined();
     fireEvent.changeText(textAreaEmail, 'email@testing.com');
+    expect(mock).toHaveBeenCalledWith('email@testing.com');
   });
 });

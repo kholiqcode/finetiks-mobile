@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Icon } from 'native-base';
 import Feather from 'react-native-vector-icons/Feather';
@@ -7,11 +7,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import type { IIconProps } from 'native-base';
 
-export type IFAIconProps = {
+export type FAIconProps = {
   type?: 'font-awesome' | 'ionicons' | 'feather';
 } & IIconProps;
 
-export const FAIcon = memo((props: IFAIconProps) => {
+export default React.memo(function FAIcon(props: FAIconProps) {
   const { testID, type, ...baseProps } = props;
 
   let iconType: typeof FontAwesome;
@@ -31,4 +31,3 @@ export const FAIcon = memo((props: IFAIconProps) => {
 
   return <Icon testID={testID} as={iconType} {...baseProps} />;
 });
-FAIcon.displayName = 'FAIcon';

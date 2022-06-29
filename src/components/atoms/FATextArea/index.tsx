@@ -1,14 +1,13 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { TextArea } from 'native-base';
 
 import type { ITextAreaProps } from 'native-base';
 
-export type IFATextAreaProps = { autoCompleteType?: string } & ITextAreaProps;
+export type FATextAreaProps = { autoCompleteType?: string } & ITextAreaProps;
 
-export const FATextArea = memo((props: IFATextAreaProps) => {
+export default React.memo(function FATextArea(props: FATextAreaProps) {
   const { testID, autoCompleteType, ...baseProps } = props;
 
   return <TextArea testID={testID} autoCompleteType={autoCompleteType} {...baseProps} />;
 });
-FATextArea.displayName = 'FATextArea';

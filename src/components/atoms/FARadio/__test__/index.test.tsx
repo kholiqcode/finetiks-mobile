@@ -2,11 +2,11 @@ import React from 'react';
 
 import { render } from '@mocks';
 
-import { FASwitch } from '@components/atoms';
+import { FARadio } from '@components/atoms';
 
-describe('FASwitch', () => {
+describe('FARadio', () => {
   it('should render correctly', () => {
-    const container = render(<FASwitch />);
+    const container = render(<FARadio value="test" />);
 
     expect(container).toBeDefined();
   });

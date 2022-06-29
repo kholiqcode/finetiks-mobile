@@ -13,7 +13,12 @@ module.exports = {
     },
   },
   rules: {
-    'no-console': 2,
+    'no-console': [
+      2,
+      {
+        allow: ['warn', 'error'],
+      },
+    ],
     'no-unused-vars': 2,
     'no-param-reassign': 2,
     'no-restricted-imports': 2,

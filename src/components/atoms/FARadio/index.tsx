@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React from 'react';
 
 import { Radio } from 'native-base';
 
@@ -6,7 +6,7 @@ import type { IRadioProps } from 'native-base';
 
 export type IFARadioProps = { label?: string } & IRadioProps;
 
-export const FARadio = memo((props: IFARadioProps) => {
+export default React.memo(function FARadio(props: IFARadioProps) {
   const { testID, label, ...baseProps } = props;
 
   return (
@@ -15,5 +15,3 @@ export const FARadio = memo((props: IFARadioProps) => {
     </Radio>
   );
 });
-
-FARadio.displayName = 'FARadio';

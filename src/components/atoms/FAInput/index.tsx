@@ -1,28 +1,26 @@
 import React from 'react';
-import { memo } from 'react';
 
 import { Input, InputGroup, InputLeftAddon, InputRightAddon } from 'native-base';
 
 import type { IInputProps } from 'native-base';
 
-export type IFAInputProps = {
+export type FAInputProps = {
   leftAddon?: string | JSX.Element;
   rightAddon?: string | JSX.Element;
 } & IInputProps;
 
-export const FAInput = memo((props: IFAInputProps) => {
+export default React.memo(function FAInput(props: FAInputProps) {
   const { testID, leftAddon, rightAddon, ...baseProps } = props;
 
   if (leftAddon || rightAddon) {
     return (
       <InputGroup>
-        {leftAddon && <InputLeftAddon children={leftAddon} />}
+        {leftAddon && <InputLeftAddon children={leftAddon} testID={'leftAddon'} />}
         <Input testID={testID} {...baseProps} placeholder="nativebase" />
-        {rightAddon && <InputRightAddon children={rightAddon} />}
+        {rightAddon && <InputRightAddon children={rightAddon} testID={'rightAddon'} />}
       </InputGroup>
     );
   }
 
   return <Input testID={testID} {...baseProps} />;
 });
-FAInput.displayName = 'FAInput';

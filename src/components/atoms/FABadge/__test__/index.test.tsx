@@ -5,15 +5,13 @@ import { render } from '@mocks';
 import { FABadge } from '@components/atoms';
 
 describe('FABadge', () => {
-  it('should match snapshot', () => {
-    const { toJSON } = render(<FABadge testID="badge-example">Test</FABadge>);
-
-    expect(toJSON()).toMatchSnapshot();
+  it('should render correctly', () => {
+    const container = render(<FABadge>Test</FABadge>);
+    expect(container).toBeDefined();
   });
 
   it('should render with children prop', () => {
-    const { getByText } = render(<FABadge testID="badge-example">Test</FABadge>);
-
-    expect(getByText('Test')).toBeTruthy();
+    const { getByText } = render(<FABadge>Test</FABadge>);
+    expect(getByText('Test')).toBeDefined();
   });
 });

@@ -1,14 +1,13 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Switch } from 'native-base';
 
 import type { ISwitchProps } from 'native-base';
 
-export type IFASwitchProps = ISwitchProps;
+export type FASwitchProps = ISwitchProps;
 
-export const FASwitch = memo((props: IFASwitchProps) => {
+export default React.memo(function FASwitch(props: FASwitchProps) {
   const { testID, ...baseProps } = props;
 
   return <Switch testID={testID} {...baseProps} />;
 });
-FASwitch.displayName = 'FASwitch';

@@ -1,17 +1,17 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Select } from 'native-base';
 
 import type { ISelectProps } from 'native-base';
 
-export type IFASelectProps = {
+export type FASelectProps = {
   data: Array<{
     label: string;
     value: string;
   }>;
 } & ISelectProps;
 
-export const FASelect = memo((props: IFASelectProps) => {
+export default React.memo(function FASelect(props: FASelectProps) {
   const { testID, data, ...baseProps } = props;
 
   return (
@@ -22,4 +22,3 @@ export const FASelect = memo((props: IFASelectProps) => {
     </Select>
   );
 });
-FASelect.displayName = 'FASelect';

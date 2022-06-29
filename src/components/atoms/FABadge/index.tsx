@@ -1,14 +1,13 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Badge } from 'native-base';
 
 import type { IBadgeProps } from 'native-base';
 
-export type IFABadgeProps = IBadgeProps;
+export type FABadgeProps = IBadgeProps;
 
-export const FABadge = memo((props: IFABadgeProps) => {
+export default React.memo(function FABadge(props: FABadgeProps) {
   const { testID, ...baseProps } = props;
 
   return <Badge testID={testID} {...baseProps} />;
 });
-FABadge.displayName = 'FABadge';

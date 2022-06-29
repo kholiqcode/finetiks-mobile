@@ -1,17 +1,17 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Heading, Spinner, Stack } from 'native-base';
 
 import type { ISpinnerProps } from 'native-base';
 import type { ColorType, ResponsiveValue } from 'native-base/lib/typescript/components/types';
 
-export type IFASpinnerProps = {
+export type FASpinnerProps = {
   children?: string | number;
   color?: ColorType;
   direction?: ResponsiveValue<'row' | 'column' | 'column-reverse' | 'row-reverse'>;
 } & ISpinnerProps;
 
-export const FASpinner = memo((props: IFASpinnerProps) => {
+export default React.memo(function FASpinner(props: FASpinnerProps) {
   const { testID, children, color, size, direction, ...baseProps } = props;
 
   return (
@@ -25,4 +25,3 @@ export const FASpinner = memo((props: IFASpinnerProps) => {
     </Stack>
   );
 });
-FASpinner.displayName = 'FASpinner';
