@@ -1,8 +1,11 @@
 name: CI-iOS
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
-    branches: [main, develop, hotfix/detox-github-action]
+    branches: [main]
 
 jobs:
   e2e-test:

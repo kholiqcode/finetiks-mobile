@@ -1,11 +1,12 @@
 name: CI-Check Commit Message & SonarCloud
 
 on:
-  push:
-    branches: [main, develop]
   pull_request:
-    types: [opened, synchronize, reopened]
-
+    branches:
+      - main
+  push:
+    branches: [main]
+    
 jobs:
   check-commit-message:
     name: Check Commit Message

@@ -1,12 +1,20 @@
 import React from 'react';
 
-import { render, setupTimeTravel, timeTravel } from '@mocks';
+import { cleanup, render, setupTimeTravel, timeTravel } from '@mocks';
 
 import { Splash } from '@screens';
+
+const mockedNavigate = jest.fn();
+
+jest.mock('@react-navigation/native', () => ({
+  useNavigation: () => ({ navigate: mockedNavigate }),
+}));
 
 beforeEach(() => {
   setupTimeTravel();
 });
+
+afterEach(cleanup);
 
 describe('Splash_Screen', () => {
   it('Render Splash screen', () => {

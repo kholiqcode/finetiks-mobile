@@ -1,7 +1,8 @@
 name: CD-Distribute Android to Firebase
 
 on:
-  workflow_dispatch:
+  release:
+    types: [published]
 
 jobs:
   distribute:
