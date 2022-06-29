@@ -1,4 +1,4 @@
-import { Intro, Register, SelectLanguage, Splash } from '@screens';
+import { Intro, OtpVerification, Register, SelectLanguage, Splash } from '@screens';
 
 const ShareScreens = [
   {
@@ -30,6 +30,14 @@ const ShareScreens = [
     component: Register,
     options: {
       title: 'register',
+      gestureEnabled: false,
+    },
+  },
+  {
+    name: 'OtpVerificationScreen',
+    component: OtpVerification,
+    options: {
+      title: 'otp_verification',
       gestureEnabled: false,
     },
   },

@@ -17,6 +17,7 @@ declare global {
       SplashScreen: undefined | never;
       SelectLanguageScreen: undefined | never;
       RegisterScreen: undefined | never;
+      OtpVerificationScreen: undefined | never;
       IntroScreen: undefined | never;
     };
 

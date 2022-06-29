@@ -1,13 +1,17 @@
 import { useState } from 'react';
 
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+
 export const useRegister = () => {
+  const navigation = useNavigation<StackNavigationProp<ReactNavigation.RootStackParamList>>();
   const [count, setCount] = useState(0);
   const [isEmailRegistered, setIsEmailRegistered] = useState(false);
   const [isPhoneRegistered, setIsPhoneRegistered] = useState(false);
   const [isInvalidEmail, setIsInvalidEmail] = useState(false);
 
   const onPressRegister = () => {
-    if (count > 3) {
+    if (count > 4) {
       setCount(0);
     } else {
       setCount(count + 1);
@@ -28,6 +32,9 @@ export const useRegister = () => {
         setIsEmailRegistered(false);
         setIsPhoneRegistered(false);
         setIsInvalidEmail(true);
+        break;
+      case 4:
+        navigation.navigate('OtpVerificationScreen');
         break;
 
       default:
