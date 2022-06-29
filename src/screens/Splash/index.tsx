@@ -7,7 +7,7 @@ import { useSplash } from './hook';
 export default function Splash() {
   useSplash();
   return (
-    <Center flex={1}>
+    <Center flex={1} backgroundColor={'white'}>
       <View
         bgColor={'muted.300'}
         borderRadius={6}

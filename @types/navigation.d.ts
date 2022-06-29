@@ -16,6 +16,7 @@ declare global {
     type RootStackParamList = {
       SplashScreen: undefined | never;
       SelectLanguageScreen: undefined | never;
+      RegisterScreen: undefined | never;
       IntroScreen: undefined | never;
     };
 
