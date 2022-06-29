@@ -1,4 +1,4 @@
-name: CI-Check Commit Message & SonarCloud
+name: CI-Check Commit & Code Analyze
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - main
   push:
     branches: [main]
-    
+
 jobs:
   check-commit-message:
     name: Check Commit Message

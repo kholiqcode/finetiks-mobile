@@ -1,4 +1,4 @@
-name: CD-Distribute Android to Firebase
+name: CD-Deploy Android to Firebase
 
 on:
   release:
