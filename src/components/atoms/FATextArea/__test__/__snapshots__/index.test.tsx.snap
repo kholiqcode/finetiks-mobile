@@ -18,7 +18,7 @@ exports[`FATextArea should match snapshot 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "borderColor": "#B2D0C6",
+        "borderColor": "#d4d4d4",
         "borderRadius": 4,
         "borderWidth": 1,
         "flexDirection": "row",

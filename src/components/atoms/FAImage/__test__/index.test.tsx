@@ -6,7 +6,7 @@ import { FAImage } from '@components/atoms';
 
 describe('FAImage', () => {
   it('should match snapshot', () => {
-    const { toJSON } = render(<FAImage />);
+    const { toJSON } = render(<FAImage alt="Test" />);
 
     expect(toJSON()).toMatchSnapshot();
   });
@@ -17,6 +17,7 @@ describe('FAImage', () => {
         source={{
           uri: 'https://wallpaperaccess.com/full/317501.jpg',
         }}
+        alt="Test"
         size="xs"
       />,
     );

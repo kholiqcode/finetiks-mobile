@@ -13,6 +13,8 @@ exports[`FAImage should match snapshot 1`] = `
   }
 >
   <Image
+    accessibilityLabel="Test"
+    alt="Test"
     dataSet={Object {}}
     onError={[Function]}
     source={null}

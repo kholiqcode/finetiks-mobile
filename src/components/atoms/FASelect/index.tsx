@@ -17,7 +17,7 @@ export const FASelect = memo((props: IFASelectProps) => {
   return (
     <Select testID={testID} {...baseProps}>
       {data.map((item) => (
-        <Select.Item label={item.label} value={item.value} />
+        <Select.Item key={item.value} label={item.label} value={item.value} />
       ))}
     </Select>
   );

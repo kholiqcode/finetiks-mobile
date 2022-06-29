@@ -30,14 +30,14 @@ exports[`FASwitch should match snapshot 1`] = `
         Array [
           Object {},
           Object {
-            "backgroundColor": "#B2D0C6",
+            "backgroundColor": "#d4d4d4",
             "borderRadius": 16,
           },
         ],
       ]
     }
     thumbTintColor="#fafafa"
-    tintColor="#B2D0C6"
+    tintColor="#d4d4d4"
     value={false}
   />
 </RNCSafeAreaProvider>

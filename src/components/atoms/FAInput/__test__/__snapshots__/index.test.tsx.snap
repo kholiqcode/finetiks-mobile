@@ -18,7 +18,7 @@ exports[`FAInput should match snapshot 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "borderColor": "#B2D0C6",
+        "borderColor": "#d4d4d4",
         "borderRadius": 4,
         "borderWidth": 1,
         "flexDirection": "row",
@@ -30,6 +30,7 @@ exports[`FAInput should match snapshot 1`] = `
       accessible={true}
       dataSet={Object {}}
       editable={true}
+      fontColor="muted.300"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyPress={[Function]}
@@ -39,7 +40,7 @@ exports[`FAInput should match snapshot 1`] = `
       style={
         Object {
           "backgroundColor": "transparent",
-          "color": "#6287A2",
+          "color": "#d4d4d4",
           "flex": 1,
           "fontFamily": undefined,
           "fontSize": 14,

@@ -35,7 +35,7 @@ exports[`FASelect should match snapshot 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderColor": "#6287A2",
+          "borderColor": "#d4d4d4",
           "borderRadius": 8,
           "borderWidth": 1,
           "flexDirection": "row",
@@ -49,6 +49,7 @@ exports[`FASelect should match snapshot 1`] = `
         dataSet={Object {}}
         editable={false}
         focusable={false}
+        fontColor="muted.300"
         importantForAccessibility="no"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -65,7 +66,7 @@ exports[`FASelect should match snapshot 1`] = `
         style={
           Object {
             "backgroundColor": "transparent",
-            "color": "#6287A2",
+            "color": "#d4d4d4",
             "flex": 1,
             "fontFamily": undefined,
             "fontSize": 14,
@@ -90,7 +91,7 @@ exports[`FASelect should match snapshot 1`] = `
         align="xMidYMid"
         bbHeight={16}
         bbWidth={16}
-        color={-5058362}
+        color={-9211021}
         dataSet={Object {}}
         focusable={false}
         meetOrSlice={0}
@@ -104,7 +105,7 @@ exports[`FASelect should match snapshot 1`] = `
               "borderWidth": 0,
             },
             Object {
-              "color": "#B2D0C6",
+              "color": "#737373",
               "height": 16,
               "marginRight": 12,
               "width": 16,
@@ -116,7 +117,7 @@ exports[`FASelect should match snapshot 1`] = `
             },
           ]
         }
-        tintColor={-5058362}
+        tintColor={-9211021}
         vbHeight={24}
         vbWidth={24}
       >
