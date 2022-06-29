@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Alert, Box, CloseIcon, HStack, IconButton, Text, VStack } from 'native-base';
 
@@ -9,7 +9,7 @@ export type IFMAlertProps = {
   description?: string;
 } & IAlertProps;
 
-export const FMAlert = memo((props: IFMAlertProps) => {
+export default React.memo(function FMAlert(props: IFMAlertProps) {
   const { testID, title, description, ...baseProps } = props;
 
   return (
@@ -42,4 +42,3 @@ export const FMAlert = memo((props: IFMAlertProps) => {
     </Alert>
   );
 });
-FMAlert.displayName = 'FAMlert';
