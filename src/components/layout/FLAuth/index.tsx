@@ -1,15 +1,14 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import React from 'react';
 
 import { Box, Text, View } from 'native-base';
 
 type IFLAuthProps = {
-  children: any;
-  title?: string | {};
-  description?: string | {};
+  children: React.ReactNode;
+  title?: string | Record<string, unknown>;
+  description?: string | Record<string, unknown>;
 };
 
-export default function FLAuth(props: IFLAuthProps) {
+export default React.memo(function FLAuth(props: IFLAuthProps) {
   const { children, title, description } = props;
 
   return (
@@ -29,4 +28,4 @@ export default function FLAuth(props: IFLAuthProps) {
       {children}
     </Box>
   );
-}
+});
