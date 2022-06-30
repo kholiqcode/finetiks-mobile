@@ -1,4 +1,4 @@
-package com.finetiksapp.newarchitecture;
+package com.finetiks.mobile.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.finetiksapp.BuildConfig;
-import com.finetiksapp.newarchitecture.components.MainComponentsRegistry;
-import com.finetiksapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.finetiks.mobile.BuildConfig;
+import com.finetiks.mobile.newarchitecture.components.MainComponentsRegistry;
+import com.finetiks.mobile.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 
 import java.util.ArrayList;
 import java.util.List;

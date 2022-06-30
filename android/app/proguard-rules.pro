@@ -27,4 +27,4 @@
 -keep public class com.horcrux.svg.** {*;}
 
 # Setup For React Native Config
--keep class com.finetiksapp.BuildConfig { *; }
+-keep class com.finetiks.mobile.BuildConfig { *; }

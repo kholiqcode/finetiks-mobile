@@ -1,4 +1,4 @@
-package com.finetiksapp.newarchitecture.components;
+package com.finetiks.mobile.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
