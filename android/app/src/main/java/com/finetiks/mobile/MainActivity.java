@@ -1,4 +1,4 @@
-package com.finetiksapp;
+package com.finetiks.mobile;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;

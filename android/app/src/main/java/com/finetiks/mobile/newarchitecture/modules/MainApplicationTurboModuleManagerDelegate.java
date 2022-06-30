@@ -1,4 +1,4 @@
-package com.finetiksapp.newarchitecture.modules;
+package com.finetiks.mobile.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
