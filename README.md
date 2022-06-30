@@ -2,10 +2,10 @@
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kholiqcode_finetiks-mobile&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kholiqcode_finetiks-mobile)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kholiqcode_finetiks-mobile&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kholiqcode_finetiks-mobile)
-[![CD-Distribute Android to Firebase](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/distributeAndroid.yml/badge.svg)](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/distributeAndroid.yml)
-[![CI-Check Commit Message & SonarCloud](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/build.yml/badge.svg)](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/build.yml)
-[![CI-Android](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/android.yml/badge.svg)](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/android.yml)
-[![CI-iOS](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/ios.yml/badge.svg)](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/ios.yml)
+[![CD-Deploy Android to Firebase](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/cd-android.yml/badge.svg)](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/cd-android.yml)
+[![CI-Check Commit & Code Analyze](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/ci-build.yml/badge.svg)](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/ci-build.yml)
+[![CI-Android](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/ci-android.yml/badge.svg)](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/ci-android.yml)
+[![CI-iOS](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/ci-ios.yml/badge.svg)](https://github.com/kholiqcode/finetiks-mobile/actions/workflows/ci-ios.yml)
 
 React Native finetiksapp repository version 0.0.1
 
