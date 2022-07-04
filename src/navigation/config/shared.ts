@@ -1,4 +1,11 @@
-import { Intro, OtpVerification, Register, SelectLanguage, Splash } from '@screens';
+import {
+  Intro,
+  OtpVerification,
+  Register,
+  RegisterSuccess,
+  SelectLanguage,
+  Splash,
+} from '@screens';
 import { Transition } from '@theme';
 
 const ShareScreens = [
@@ -39,6 +46,14 @@ const ShareScreens = [
     },
   },
   {
+    name: 'RegisterSuccessScreen',
+    component: RegisterSuccess,
+    options: {
+      title: 'register_success',
+      gestureEnabled: false,
+    },
+  },
+  {
     name: 'OtpVerificationScreen',
     component: OtpVerification,
     options: {
@@ -48,4 +63,4 @@ const ShareScreens = [
     },
   },
 ];
-export default ShareScreens;
+export { ShareScreens };
