@@ -5,18 +5,10 @@ import { Pressable, Text, View } from 'native-base';
 import { FAIcon, FAInput } from '@components/atoms';
 import { FLAuth } from '@components/layout';
 
-export default function Register(props: { isWrong?: boolean }) {
-  const { isWrong } = props;
+import useOtpVerification from './hook';
 
-  const [counter, setCounter] = React.useState(59);
-
-  React.useEffect(() => {
-    const timer: any = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
-
-    return () => clearInterval(timer);
-  }, [counter]);
-
-  const onPressResend = () => setCounter(0);
+export default function Register() {
+  const { isWrong, counter, onPressResend } = useOtpVerification();
 
   return (
     <FLAuth

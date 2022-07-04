@@ -1,2 +1,1 @@
-import ShareScreens from './shared';
-export { ShareScreens };
+export * from './shared';
