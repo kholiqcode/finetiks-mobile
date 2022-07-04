@@ -5,6 +5,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 export default function useIntro() {
   const navigation = useNavigation<StackNavigationProp<ReactNavigation.RootStackParamList>>();
+
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
@@ -26,6 +27,7 @@ export default function useIntro() {
   ]);
 
   // HANDLER
+
   const onNextPress = useCallback(() => setIndex(index < routes.length && index + 1), [index]);
   const onBackPress = useCallback(() => setIndex(index > 0 && index - 1), [index]);
   const onGettingStartedPress = () => navigation.navigate('RegisterScreen');

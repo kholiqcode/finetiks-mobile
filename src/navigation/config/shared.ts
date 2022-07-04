@@ -6,6 +6,7 @@ import {
   SelectLanguage,
   Splash,
 } from '@screens';
+import { Transition } from '@theme';
 
 const ShareScreens = [
   {
@@ -14,6 +15,7 @@ const ShareScreens = [
     options: {
       title: 'splash',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.forFade,
     },
   },
   {
@@ -22,6 +24,7 @@ const ShareScreens = [
     options: {
       title: 'intro',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.forFade,
     },
   },
   {
@@ -30,6 +33,7 @@ const ShareScreens = [
     options: {
       title: 'select_language',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.bottomToUp,
     },
   },
   {
@@ -38,6 +42,7 @@ const ShareScreens = [
     options: {
       title: 'register',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.bottomToUp,
     },
   },
   {
@@ -54,6 +59,7 @@ const ShareScreens = [
     options: {
       title: 'otp_verification',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.bottomToUp,
     },
   },
 ];

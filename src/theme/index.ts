@@ -6,4 +6,7 @@ import { fontSizes, letterSpacings } from './fonts';
 const themes = extendTheme({ fontSizes, letterSpacings, components });
 
 export { components, letterSpacings, themes };
+
+export * from './animation';
+
 export * from './mixin';
