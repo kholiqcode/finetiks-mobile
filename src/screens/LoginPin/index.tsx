@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Center, HStack, Pressable, Text } from 'native-base';
+import { Box, Center, HStack, Text } from 'native-base';
 
 import { FAIcon } from '@components/atoms';
 import { FLAuth } from '@components/layout';
@@ -9,7 +9,7 @@ import { FMNumberPad, FMOtpField } from '@components/molecules';
 import useLoginPin from './hook';
 
 export default function LoginPin({ isWrong }: { isWrong?: boolean }) {
-  const { onPressRegister } = useLoginPin();
+  const { onPressRegister, onPressPhoneNumber } = useLoginPin();
   return (
     <FLAuth
       px={'20px'}
@@ -33,14 +33,12 @@ export default function LoginPin({ isWrong }: { isWrong?: boolean }) {
         </HStack>
       </Box>
       <Center marginTop={84} justifyContent={'center'}>
-        <Text marginRight={2} mb={'2'}>
+        <Text onPress={onPressPhoneNumber} mb={'2'}>
           Phone Number
         </Text>
-        <Text marginRight={2}>
-          Dont' have an account?
-          <Pressable onPress={onPressRegister}>
-            <Text> Register</Text>
-          </Pressable>
+        <Text bgColor={'amber.400'} justifyContent={'center'}>
+          Don't have an account?
+          <Text onPress={onPressRegister}> Register</Text>
         </Text>
       </Center>
       <FMNumberPad />

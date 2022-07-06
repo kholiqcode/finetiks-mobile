@@ -8,7 +8,12 @@ export default function useLoginPin() {
   const [isWrong, setIsWrong] = React.useState(false);
 
   const onPressRegister = () => {
-    navigation.navigate('RegisterScreen');
+    navigation.goBack();
   };
-  return { onPressRegister, isWrong, setIsWrong };
+
+  const onPressPhoneNumber = () => {
+    navigation.navigate('LoginPhoneScreen');
+  };
+
+  return { onPressRegister, isWrong, setIsWrong, onPressPhoneNumber };
 }

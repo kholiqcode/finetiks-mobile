@@ -17,7 +17,7 @@ export const useRegister = () => {
   };
 
   const onPressLogin = () => {
-    navigation.navigate('LoginPhoneScreen');
+    navigation.navigate('LoginPinScreen');
   };
 
   return { isEmailRegistered, isPhoneRegistered, isInvalidEmail, onPressRegister, onPressLogin };

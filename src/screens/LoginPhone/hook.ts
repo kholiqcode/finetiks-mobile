@@ -9,7 +9,7 @@ export const useLoginPhone = () => {
 
   const onPressUsePin = () => {
     // navigation.navigate('OtpVerificationScreen');
-    navigation.navigate('LoginPinScreen');
+    navigation.goBack();
   };
 
   const onPressLogin = () => {
