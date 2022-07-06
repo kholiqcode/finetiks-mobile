@@ -21,10 +21,7 @@ declare global {
       OtpVerificationScreen: undefined | never;
       IntroScreen: undefined | never;
       LoginPinScreen: undefined | never;
-    };
-
-    type LoginStackParamList = {
-      LoginPinScreen: undefined | never;
+      LoginPhoneScreen: undefined | never;
     };
 
     type Props = NativeStackScreenProps<RootStackParamList>;
@@ -32,7 +29,6 @@ declare global {
     type RouteConfigProps = IntrinsicAttributes &
       RouteConfig<
         RootStackParamList,
-        LoginStackParamList,
         string,
         StackNavigationProp<ParamListBase>,
         StackNavigationOptions,
