@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { cleanup, render } from '@mocks';
+import { render } from '@mocks';
 
-import { Intro } from '@screens';
+import { LoginPhone } from '@screens';
 
 const mockedNavigate = jest.fn();
 
@@ -16,11 +16,9 @@ jest.mock('@react-navigation/native', () => {
   };
 });
 
-afterEach(cleanup);
-
-describe('Intro_Screen', () => {
-  it('Render Intro screen', () => {
-    const intro = render(<Intro />);
-    expect(intro).toBeDefined();
+describe('LoginPhone_Screen', () => {
+  it('Render LoginPhone screen', () => {
+    const screen = render(<LoginPhone />);
+    expect(screen).toBeDefined();
   });
 });

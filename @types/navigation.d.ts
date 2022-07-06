@@ -20,6 +20,8 @@ declare global {
       RegisterSuccessScreen: undefined | never;
       OtpVerificationScreen: undefined | never;
       IntroScreen: undefined | never;
+      LoginPinScreen: undefined | never;
+      LoginPhoneScreen: undefined | never;
     };
 
     type Props = NativeStackScreenProps<RootStackParamList>;

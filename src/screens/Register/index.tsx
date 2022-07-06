@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Divider, Text, View } from 'native-base';
+import { Box, Center, Divider, HStack, Text } from 'native-base';
 
 import { FAButton, FAIcon, FAInput } from '@components/atoms';
 import { FLAuth } from '@components/layout';
@@ -8,89 +8,91 @@ import { FLAuth } from '@components/layout';
 import { useRegister } from './hook';
 
 export default function Register() {
-  const { isEmailRegistered, isPhoneRegistered, isInvalidEmail, onPressRegister } = useRegister();
+  const { isEmailRegistered, isPhoneRegistered, isInvalidEmail, onPressRegister, onPressLogin } =
+    useRegister();
 
   return (
     <FLAuth
+      px={'20px'}
       title={'Register Account'}
       description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua`}
-      px={'20px'}
       backgroundColor={'white'}
     >
-      <View flex={1}>
-        <View flexDirection={'row'}>
-          <FAInput
-            InputLeftElement={
-              <View height={4} width={4} bgColor={'muted.500'} borderRadius={30} marginLeft={4} />
-            }
-            color={'text.900'}
-            width={86}
-            marginRight={4}
-            placeholder="+62"
-            variant={'outline'}
-            borderColor={'muted.600'}
-            max={3}
-          />
-          <FAInput
-            flex={1}
-            borderColor={isPhoneRegistered ? 'error.600' : 'muted.300'}
-            placeholder="Phone Number"
-            color={'text.900'}
-          />
-        </View>
-        {isPhoneRegistered && (
-          <View flexDirection={'row'} alignItems={'center'} marginTop={'5px'}>
-            <FAIcon name="exclamation" color={'error.600'} size={'12px'} />
-            <Text color={'error.600'} fontSize={'10px'}>
-              This phone number has been registered in Finetiks. Please login.
-            </Text>
-          </View>
-        )}
-
-        <FAInput marginTop={25} borderColor={'muted.300'} color={'text.900'} placeholder="Email" />
-        {isEmailRegistered ||
-          (isInvalidEmail && (
-            <View flexDirection={'row'} alignItems={'center'} marginTop={'5px'}>
+      <Box flex={0.5}>
+        <Box flex={1}>
+          <HStack mt={'20'}>
+            <FAInput
+              InputLeftElement={
+                <Box height={4} width={4} bgColor={'muted.500'} borderRadius={30} marginLeft={4} />
+              }
+              color={'text.900'}
+              width={86}
+              marginRight={4}
+              placeholder="+62"
+              variant={'outline'}
+              borderColor={'muted.600'}
+              max={3}
+            />
+            <FAInput
+              flex={1}
+              borderColor={isPhoneRegistered ? 'error.600' : 'muted.300'}
+              placeholder="Phone Number"
+              color={'text.900'}
+            />
+          </HStack>
+          {isPhoneRegistered && (
+            <HStack alignItems={'center'} marginTop={'5px'}>
               <FAIcon name="exclamation" color={'error.600'} size={'12px'} />
               <Text color={'error.600'} fontSize={'10px'}>
-                {isEmailRegistered
-                  ? 'This email address has been registered in Finetiks. Please login.'
-                  : 'Invalid Email Format'}
+                This phone number has been registered in Finetiks. Please login.
               </Text>
-            </View>
-          ))}
-      </View>
-      <View flex={1}>
-        <View alignItems={'center'}>
+            </HStack>
+          )}
+
+          <FAInput
+            marginTop={25}
+            borderColor={'muted.300'}
+            color={'text.900'}
+            placeholder="Email"
+          />
+          {isEmailRegistered ||
+            (isInvalidEmail && (
+              <HStack alignItems={'center'} marginTop={'5px'}>
+                <FAIcon name="exclamation" color={'error.600'} size={'12px'} />
+                <Text color={'error.600'} fontSize={'10px'}>
+                  {isEmailRegistered
+                    ? 'This email address has been registered in Finetiks. Please login.'
+                    : 'Invalid Email Format'}
+                </Text>
+              </HStack>
+            ))}
+        </Box>
+
+        <Box alignItems={'center'} flex={1} justifyContent={'flex-end'} marginBottom={'18px'}>
           <Text fontSize={10} fontFamily={'body'}>
             by creating an account, you agree with our
           </Text>
           <Text fontSize={10} fontFamily={'body'}>
             Terms of Use and Privacy Policy
           </Text>
-        </View>
-        <FAButton
-          colorScheme={'muted'}
-          variant={'solid'}
-          marginTop={'18px'}
-          onPress={onPressRegister}
-        >
+        </Box>
+      </Box>
+      <Box flex={0.3}>
+        <FAButton colorScheme={'muted'} variant={'solid'} onPress={onPressRegister}>
           Register
         </FAButton>
-        <View marginTop={'30px'}>
-          <View
+        <Box my={'18px'}>
+          <Center
             zIndex={1}
             bgColor={'white'}
             width={30}
             height={30}
-            alignItems={'center'}
             alignSelf={'center'}
-            justifyContent={'center'}
             borderRadius={30}
             _dark={{ backgroundColor: 'gray.800' }}
           >
             <Text fontFamily={'body'}>or</Text>
-          </View>
+          </Center>
           <Divider
             position={'absolute'}
             bottom={13}
@@ -99,11 +101,11 @@ export default function Register() {
             alignSelf={'center'}
             _dark={{ backgroundColor: 'white' }}
           />
-        </View>
-        <FAButton colorScheme={'muted'} variant={'outlineGray'} marginTop={'18px'}>
+        </Box>
+        <FAButton colorScheme={'muted'} variant={'outlineGray'} onPress={onPressLogin}>
           Log in
         </FAButton>
-      </View>
+      </Box>
     </FLAuth>
   );
 }

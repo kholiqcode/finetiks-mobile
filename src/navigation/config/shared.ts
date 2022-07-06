@@ -63,4 +63,4 @@ const ShareScreens = [
     },
   },
 ];
-export { ShareScreens };
+export default ShareScreens;

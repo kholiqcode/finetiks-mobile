@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, IBoxProps, Text, View } from 'native-base';
+import { Box, IBoxProps, Text } from 'native-base';
 
 type IFLAuthProps = {
   children: React.ReactNode;
@@ -12,8 +12,8 @@ export default React.memo(function FLAuth(props: IFLAuthProps) {
   const { children, title, description, ...baseProps } = props;
 
   return (
-    <Box flex={1} {...baseProps}>
-      <View flex={1} justifyContent={'center'}>
+    <Box flex={1} {...baseProps} safeAreaTop>
+      <Box mt={'20'} justifyContent={'center'}>
         {title && (
           <Text fontSize={24} fontWeight={'bold'}>
             {title.toString()}
@@ -24,7 +24,7 @@ export default React.memo(function FLAuth(props: IFLAuthProps) {
             {description.toString()}
           </Text>
         )}
-      </View>
+      </Box>
       {children}
     </Box>
   );

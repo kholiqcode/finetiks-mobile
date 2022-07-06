@@ -5,9 +5,9 @@ export default function useOtpVerification() {
   const [counter, setCounter] = React.useState(59);
 
   React.useEffect(() => {
-    const timer: any = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+    const timer: unknown = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(timer as number);
   }, [counter]);
 
   const onPressResend = useCallback(() => setCounter(0), [counter]);

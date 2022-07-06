@@ -13,6 +13,7 @@
     "build:android-prod": "cd android && ./gradlew assembleProdRelease",
     "android:beta": "cd android && fastlane beta",
     "android:local": "adb reverse tcp:8081 tcp:8081",
+    "ios:pod-install": "cd ios ; pod install ; cd ..",
     "start": "react-native start --reset-cache",
     "release": "standard-version",
     "test": "jest --verbose",
