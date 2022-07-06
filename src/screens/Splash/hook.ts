@@ -11,7 +11,7 @@ export const useSplash = () => {
   useEffect(() => {
     crashlytics().log('Splash screen mounted.');
     const timer = setTimeout(() => {
-      navigation.replace('SelectLanguageScreen');
+      navigation.replace('IntroScreen');
     }, 2000);
 
     return () => {

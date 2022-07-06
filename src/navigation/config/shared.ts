@@ -1,4 +1,12 @@
-import { Intro, OtpVerification, Register, SelectLanguage, Splash } from '@screens';
+import {
+  Intro,
+  OtpVerification,
+  Register,
+  RegisterSuccess,
+  SelectLanguage,
+  Splash,
+} from '@screens';
+import { Transition } from '@theme';
 
 const ShareScreens = [
   {
@@ -7,6 +15,7 @@ const ShareScreens = [
     options: {
       title: 'splash',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.forFade,
     },
   },
   {
@@ -15,6 +24,7 @@ const ShareScreens = [
     options: {
       title: 'intro',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.forFade,
     },
   },
   {
@@ -23,6 +33,7 @@ const ShareScreens = [
     options: {
       title: 'select_language',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.bottomToUp,
     },
   },
   {
@@ -30,6 +41,15 @@ const ShareScreens = [
     component: Register,
     options: {
       title: 'register',
+      gestureEnabled: false,
+      cardStyleInterpolator: Transition.bottomToUp,
+    },
+  },
+  {
+    name: 'RegisterSuccessScreen',
+    component: RegisterSuccess,
+    options: {
+      title: 'register_success',
       gestureEnabled: false,
     },
   },
@@ -39,6 +59,7 @@ const ShareScreens = [
     options: {
       title: 'otp_verification',
       gestureEnabled: false,
+      cardStyleInterpolator: Transition.bottomToUp,
     },
   },
 ];

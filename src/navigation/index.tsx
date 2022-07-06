@@ -1,17 +1,17 @@
 import React from 'react';
 
 import { DdRumReactNavigationTracking } from '@datadog/mobile-react-navigation';
+import { navigationRef } from '@navigation';
 import analytics from '@react-native-firebase/analytics';
-import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { ShareScreens } from './config';
+import { LoginScreens, ShareScreens } from './config';
 
 const RootStack = createStackNavigator<ReactNavigation.RootStackParamList>();
 
 function Router() {
   const routeNameRef = React.useRef<unknown>();
-  const navigationRef = useNavigationContainerRef();
 
   return (
     <NavigationContainer
@@ -40,6 +40,11 @@ function Router() {
       >
         <RootStack.Group screenOptions={{ headerShown: false }}>
           {ShareScreens.map((route: ReactNavigation.RouteConfigProps, index) => (
+            <RootStack.Screen key={index} {...route} />
+          ))}
+        </RootStack.Group>
+        <RootStack.Group screenOptions={{ headerShown: false }}>
+          {LoginScreens.map((route: ReactNavigation.RouteConfigProps, index) => (
             <RootStack.Screen key={index} {...route} />
           ))}
         </RootStack.Group>

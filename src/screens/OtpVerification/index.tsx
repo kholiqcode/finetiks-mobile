@@ -6,10 +6,11 @@ import { FAIcon } from '@components/atoms';
 import { FLAuth } from '@components/layout';
 import { FMOtpField } from '@components/molecules';
 
-import { useOtpVerification } from './hooks';
+import useOtpVerification from './hook';
 
-export default function Register({ isWrong }: { isWrong?: boolean }) {
-  const { counter, onPressResend } = useOtpVerification();
+export default function Register() {
+  const { isWrong, counter, onPressResend } = useOtpVerification();
+
   return (
     <FLAuth
       px={'20px'}

@@ -8,7 +8,8 @@ import { FLAuth } from '@components/layout';
 import { useRegister } from './hook';
 
 export default function Register() {
-  const { isEmailRegistered, isPhoneRegistered, isInvalidEmail, onPressRegister } = useRegister();
+  const { isEmailRegistered, isPhoneRegistered, isInvalidEmail, onPressRegister, onPressLogin } =
+    useRegister();
 
   return (
     <FLAuth
@@ -98,7 +99,12 @@ export default function Register() {
             _dark={{ backgroundColor: 'white' }}
           />
         </Box>
-        <FAButton colorScheme={'muted'} variant={'outlineGray'} marginTop={'18px'}>
+        <FAButton
+          colorScheme={'muted'}
+          variant={'outlineGray'}
+          marginTop={'18px'}
+          onPress={onPressLogin}
+        >
           Log in
         </FAButton>
       </Box>
